@@ -4,8 +4,8 @@ Java JAX-RS REST API for `UniteEnseignement` and `Module`, implemented as a Mave
 
 ## Team
 
-- Student(s): _Add your group members here before submission._
-- Repository: _Add your GitHub repository URL here after publishing._
+- Student: Tawfik Ait Ammar
+- Repository: https://github.com/tawfikkaitammar9-lgtm/SOA-REST-Workshop
 
 ## Prerequisites
 
