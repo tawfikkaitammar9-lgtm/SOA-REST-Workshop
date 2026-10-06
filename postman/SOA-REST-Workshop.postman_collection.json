@@ -1,0 +1,31 @@
+{
+  "info": {
+    "name": "SOA REST Workshop 1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:8080/soa-rest-workshop/api" }],
+  "item": [
+    {
+      "name": "Teaching units",
+      "item": [
+        { "name": "Create UE", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/xml" }], "body": { "mode": "raw", "raw": "<uniteEnseignement>\n  <code>1</code>\n  <domaine>Computer Science</domaine>\n  <responsable>Dr. Martin</responsable>\n  <credits>6</credits>\n  <semestre>2</semestre>\n</uniteEnseignement>" }, "url": "{{baseUrl}}/UE" } },
+        { "name": "List UEs", "request": { "method": "GET", "url": "{{baseUrl}}/UE" } },
+        { "name": "UEs by semester", "request": { "method": "GET", "url": "{{baseUrl}}/UE?semestre=2" } },
+        { "name": "UE by code", "request": { "method": "GET", "url": "{{baseUrl}}/UE?code=1" } },
+        { "name": "Update UE", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/xml" }], "body": { "mode": "raw", "raw": "<uniteEnseignement>\n  <code>1</code>\n  <domaine>Computer Science</domaine>\n  <responsable>Dr. Martin</responsable>\n  <credits>6</credits>\n  <semestre>3</semestre>\n</uniteEnseignement>" }, "url": "{{baseUrl}}/UE/1" } },
+        { "name": "Delete UE", "request": { "method": "DELETE", "url": "{{baseUrl}}/UE/1" } }
+      ]
+    },
+    {
+      "name": "Modules",
+      "item": [
+        { "name": "Create module", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"matricule\": \"MOD-101\",\n  \"nom\": \"Web Services\",\n  \"coefficient\": 3,\n  \"volumeHoraire\": 42,\n  \"type\": \"PROFESSIONNEL\",\n  \"uniteEnseignement\": { \"code\": 1 }\n}" }, "url": "{{baseUrl}}/modules" } },
+        { "name": "List modules", "request": { "method": "GET", "url": "{{baseUrl}}/modules" } },
+        { "name": "Module by matricule", "request": { "method": "GET", "url": "{{baseUrl}}/modules/MOD-101" } },
+        { "name": "Modules by UE", "request": { "method": "GET", "url": "{{baseUrl}}/modules/UE?codeUE=1" } },
+        { "name": "Update module", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"matricule\": \"MOD-101\",\n  \"nom\": \"REST Web Services\",\n  \"coefficient\": 3,\n  \"volumeHoraire\": 45,\n  \"type\": \"PROFESSIONNEL\",\n  \"uniteEnseignement\": { \"code\": 1 }\n}" }, "url": "{{baseUrl}}/modules/MOD-101" } },
+        { "name": "Delete module", "request": { "method": "DELETE", "url": "{{baseUrl}}/modules/MOD-101" } }
+      ]
+    }
+  ]
+}

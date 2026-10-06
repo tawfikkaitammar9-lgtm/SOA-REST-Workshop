@@ -1,0 +1,9 @@
+target/
+.idea/
+*.iml
+*.log
+
+# Unrelated workspace documents
+Document.pdf
+Document2.pdf
+Documen3t.pdf
